@@ -1,6 +1,6 @@
 "use client";
 
-import { PricingBasic } from "./code.demo";
+import { Pricing } from "@/components/blocks/pricing";
 
 const demoPlans = [
   {
@@ -61,10 +61,17 @@ const demoPlans = [
   },
 ];
 
-export default function Home() {
+function PricingBasic() {
   return (
-    <main className="min-h-screen">
-      <PricingBasic />
-    </main>
+    <div className="h-[800px] overflow-y-auto rounded-lg">
+      <Pricing 
+        plans={demoPlans}
+        title="Simple, Transparent Pricing"
+        description="Choose the plan that works for you
+All plans include access to our platform, lead generation tools, and dedicated support."
+      />
+    </div>
   );
 }
+
+export { PricingBasic }; 
