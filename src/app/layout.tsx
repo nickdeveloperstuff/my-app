@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${garamond.variable} antialiased bg-[#FDFBF5]`}>
+      <body className={`${garamond.variable} antialiased bg-background`}>
         {children}
       </body>
     </html>

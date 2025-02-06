@@ -79,20 +79,21 @@ export function Pricing({
         </p>
       </div>
 
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-center mb-10 relative z-50">
         <label className="relative inline-flex items-center cursor-pointer">
-          <Label>
+          <Label className="flex items-center gap-2">
+            <span className="font-semibold">Monthly</span>
             <Switch
               ref={switchRef as any}
               checked={!isMonthly}
               onCheckedChange={handleToggle}
-              className="relative"
+              className="relative z-50"
             />
+            <span className="font-semibold">
+              Annual <span className="text-primary">(Save 20%)</span>
+            </span>
           </Label>
         </label>
-        <span className="ml-2 font-semibold">
-          Annual billing <span className="text-primary">(Save 20%)</span>
-        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 sm:2 gap-4">
@@ -119,16 +120,14 @@ export function Pricing({
               delay: 0.4,
               opacity: { duration: 0.5 },
             }}
+            style={{
+              zIndex: plan.isPopular ? 20 : index === 0 ? 10 : index === 2 ? 10 : 15
+            }}
             className={cn(
               `rounded-2xl border-[1px] p-6 bg-background text-center lg:flex lg:flex-col lg:justify-center relative`,
               plan.isPopular ? "border-primary border-2" : "border-border",
               "flex flex-col",
-              !plan.isPopular && "mt-5",
-              index === 0 || index === 2
-                ? "z-0 transform translate-x-0 translate-y-0 -translate-z-[50px] rotate-y-[10deg]"
-                : "z-10",
-              index === 0 && "origin-right",
-              index === 2 && "origin-left"
+              !plan.isPopular && "mt-5"
             )}
           >
             {plan.isPopular && (
