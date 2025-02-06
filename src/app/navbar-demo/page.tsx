@@ -6,22 +6,18 @@ import { Home, Settings, User, Bell } from "lucide-react"
 const navigationItems = [
   {
     name: "Home",
-    url: "/navbar-demo",
     icon: Home,
   },
   {
     name: "Profile",
-    url: "/navbar-demo/profile",
     icon: User,
   },
   {
     name: "Notifications",
-    url: "/navbar-demo/notifications",
     icon: Bell,
   },
   {
     name: "Settings",
-    url: "/navbar-demo/settings",
     icon: Settings,
   },
 ]

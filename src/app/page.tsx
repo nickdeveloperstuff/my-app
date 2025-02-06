@@ -1,6 +1,38 @@
 "use client";
 
 import { PricingBasic } from "./code.demo";
+import { NavBar } from "@/components/ui/tubelight-navbar";
+import { HomeIcon, Settings, UserIcon, Bell } from "lucide-react";
+import { Footerdemo } from "@/components/ui/footer-section";
+import { Hero } from "@/components/ui/animated-hero";
+import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
+import { TestimonialSection } from "@/components/ui/testimonial-section";
+import { FeatureSectionWithCardGradient } from "@/components/blocks/feature-section-with-card-gradient";
+import { BentoSection } from "@/components/blocks/bento-section";
+import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
+
+const navigationItems = [
+  {
+    name: "Home",
+    url: "/",
+    icon: HomeIcon
+  },
+  {
+    name: "Profile",
+    url: "/",
+    icon: UserIcon
+  },
+  {
+    name: "Settings",
+    url: "/",
+    icon: Settings
+  },
+  {
+    name: "Notifications",
+    url: "/",
+    icon: Bell
+  }
+];
 
 const demoPlans = [
   {
@@ -61,10 +93,18 @@ const demoPlans = [
   },
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className="min-h-screen">
+      <NavBar items={navigationItems} className="mb-8" />
+      <Hero />
+      <FeaturesSectionWithBentoGrid />
+      <TestimonialSection />
+      <BentoSection />
+      <FeaturesSectionWithHoverEffects />
+      <FeatureSectionWithCardGradient />
       <PricingBasic />
+      <Footerdemo />
     </main>
   );
 }
