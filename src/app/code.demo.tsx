@@ -63,7 +63,7 @@ const demoPlans = [
 
 function PricingBasic() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-background">
       <Pricing 
         plans={demoPlans}
         title="Simple, Transparent Pricing"

@@ -12,6 +12,11 @@ module.exports = {
   ],
   darkMode: ["class", "class"],
   theme: {
+  	fontFamily: {
+  		sans: ["EB Garamond", "Garamond", ...fontFamily.sans],
+  		serif: ["EB Garamond", "Garamond", ...fontFamily.serif],
+  		mono: fontFamily.mono,
+  	},
   	extend: {
   		animation: {
   			aurora: 'aurora 60s linear infinite'

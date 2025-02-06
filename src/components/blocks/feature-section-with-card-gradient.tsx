@@ -45,7 +45,7 @@ interface FeatureCardProps {
 
 function FeatureCard({ title, description, icon: Icon }: FeatureCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-neutral-50/20 to-neutral-100/20 p-8 hover:shadow-lg transition-all duration-500 hover:bg-gradient-to-b hover:from-neutral-50/40 hover:to-neutral-100/40">
+    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-background/20 to-muted/20 p-8 hover:shadow-lg transition-all duration-500 hover:bg-gradient-to-b hover:from-background/40 hover:to-muted/40">
       <div className="relative z-10">
         <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 via-primary/30 to-primary/50">
           <Icon className="h-6 w-6 text-primary" />
@@ -102,14 +102,14 @@ export const Grid = ({
   ];
   return (
     <div className="pointer-events-none absolute left-1/2 top-0  -ml-20 -mt-2 h-full w-full [mask-image:linear-gradient(white,transparent)]">
-      <div className="absolute inset-0 bg-gradient-to-r  [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] dark:from-zinc-900/30 from-zinc-100/30 to-zinc-300/30 dark:to-zinc-900/30 opacity-100">
+      <div className="absolute inset-0 bg-gradient-to-r [mask-image:radial-gradient(farthest-side_at_top,white,transparent)] from-background/30 to-muted/30 opacity-100">
         <GridPattern
           width={size ?? 20}
           height={size ?? 20}
           x="-12"
           y="4"
           squares={p}
-          className="absolute inset-0 h-full w-full  mix-blend-overlay dark:fill-white/10 dark:stroke-white/10 stroke-black/10 fill-black/10"
+          className="absolute inset-0 h-full w-full mix-blend-overlay fill-border stroke-border"
         />
       </div>
     </div>
