@@ -8,8 +8,7 @@ import { Hero } from "@/components/ui/animated-hero";
 import { FeaturesSectionWithHoverEffects } from "@/components/blocks/feature-section-with-hover-effects";
 import { TestimonialSection } from "@/components/ui/testimonial-section";
 import { FeatureSectionWithCardGradient } from "@/components/blocks/feature-section-with-card-gradient";
-import { BentoSection } from "@/components/blocks/bento-section";
-import { FeaturesSectionWithBentoGrid } from "@/components/blocks/feature-section-with-bento-grid";
+import { Timeline } from "@/components/ui/timeline";
 
 const navigationItems = [
   {
@@ -93,14 +92,51 @@ const demoPlans = [
   },
 ];
 
+const timelineData = [
+  {
+    title: "2024",
+    content: (
+      <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg">
+        <h4 className="text-xl font-bold mb-2">Latest Innovations</h4>
+        <p className="text-neutral-600 dark:text-neutral-400">
+          Introducing cutting-edge features and revolutionary improvements to enhance your experience.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2023",
+    content: (
+      <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg">
+        <h4 className="text-xl font-bold mb-2">Major Milestones</h4>
+        <p className="text-neutral-600 dark:text-neutral-400">
+          Achieved significant growth and implemented groundbreaking technologies.
+        </p>
+      </div>
+    ),
+  },
+  {
+    title: "2022",
+    content: (
+      <div className="bg-neutral-50 dark:bg-neutral-900 p-6 rounded-lg">
+        <h4 className="text-xl font-bold mb-2">Foundation</h4>
+        <p className="text-neutral-600 dark:text-neutral-400">
+          Started our journey with a vision to transform the industry.
+        </p>
+      </div>
+    ),
+  },
+];
+
 export default function HomePage() {
   return (
     <main className="min-h-screen">
       <NavBar items={navigationItems} className="mb-8" />
       <Hero />
-      <FeaturesSectionWithBentoGrid />
+      <div className="-mt-20">
+        <Timeline data={timelineData} />
+      </div>
       <TestimonialSection />
-      <BentoSection />
       <FeaturesSectionWithHoverEffects />
       <FeatureSectionWithCardGradient />
       <PricingBasic />
